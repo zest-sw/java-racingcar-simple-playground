@@ -96,6 +96,6 @@ public class CarTest {
         int position = car.getPosition();
 
         //then
-        assertThat(position).isBetween(4000,6000);
+        assertThat(position).isBetween(5000,7000);
     }
 }
