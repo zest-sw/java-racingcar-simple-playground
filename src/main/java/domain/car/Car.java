@@ -1,4 +1,4 @@
-package car;
+package domain.car;
 
 import java.util.Random;
 
@@ -12,26 +12,26 @@ public class Car {
         this.name = CarName;
     }
 
-    public void moveCar(int inputValue){
+    public void moveCar(int inputValue) {
 
-        if (inputValue<0){
-            throw new RuntimeException("자동차 이동 인자가 0보다 작습니다.");
+        if (inputValue < 0) {
+            throw new IllegalArgumentException("자동차 이동 인자가 0보다 작습니다.");
         }
-        if (inputValue>9){
-            throw new RuntimeException("자동차 이동 인자가 9보다 큽니다.");
+        if (inputValue > 9) {
+            throw new IllegalArgumentException("자동차 이동 인자가 9보다 큽니다.");
         }
 
-        if (inputValue >= 4){
+        if (inputValue >= 4) {
             position++;
         }
     }
 
-    public void moveCarRandomly(){
+    public void moveCarRandomly() {
         int randomValue = getRandomValue();
         moveCar(randomValue);
     }
 
-    private int getRandomValue(){
+    private int getRandomValue() {
         return random.nextInt(9);
     }
 
@@ -39,14 +39,13 @@ public class Car {
         return this.name;
     }
 
-    public void setName(String carName){
+    public void setName(String carName) {
         this.name = carName;
     }
 
-    public int getPosition(){
+    public int getPosition() {
         return this.position;
     }
-
 
 
 }

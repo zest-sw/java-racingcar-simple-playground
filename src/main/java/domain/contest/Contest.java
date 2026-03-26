@@ -1,6 +1,6 @@
-package contest;
+package domain.contest;
 
-import car.Car;
+import domain.car.Car;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,8 +76,6 @@ public class Contest {
         }
         System.out.println();
     }
-
-    ;
 
     private void printStatus(Car car) {
         for (int i = 0; i < car.getPosition(); i++) {

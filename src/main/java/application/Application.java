@@ -1,6 +1,6 @@
 package application;
 
-import contest.Contest;
+import domain.contest.Contest;
 
 import java.util.Scanner;
 
@@ -26,7 +26,7 @@ public class Application {
         String names = scanner.nextLine();
         String[] participants = parseParticipant(names);
         if (participants.length == 0) {
-            throw new RuntimeException("자동차 이름이 잘못 입력되었습니다.(입력값이 없습니다.)");
+            throw new IllegalArgumentException("자동차 이름이 잘못 입력되었습니다.(입력값이 없습니다.)");
         }
         for (String participant : participants) {
             validateCarName(participant);

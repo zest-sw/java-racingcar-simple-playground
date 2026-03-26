@@ -1,9 +1,10 @@
-package car;
-
-import static org.assertj.core.api.Assertions.*;
+package domain.car;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CarTest {
     @DisplayName("자동차는 이름을 가지고 있다.")
@@ -96,6 +97,6 @@ public class CarTest {
         int position = car.getPosition();
 
         //then
-        assertThat(position).isBetween(5000,7000);
+        assertThat(position).isBetween(5000, 7000);
     }
 }
