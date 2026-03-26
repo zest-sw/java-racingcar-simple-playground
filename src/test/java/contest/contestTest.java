@@ -35,7 +35,7 @@ public class contestTest {
 
         //when
         contest.startContest();
-        List<String> actual = contest.getWinners();
+        String[] actual = contest.getWinners();
 
         //then
         assertThat(actual).containsAnyOf("car1", "car2", "car3");
@@ -52,7 +52,7 @@ public class contestTest {
 
         //when
         contest.startContest();
-        List<String> actual = contest.getWinners();
+        String[] actual = contest.getWinners();
 
         //then
         assertThat(actual).hasSizeGreaterThan(0);
