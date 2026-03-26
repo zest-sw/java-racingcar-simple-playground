@@ -4,37 +4,35 @@ import car.Car;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Contest {
     private List<Car> participants = new ArrayList<>();
     private int attempt;
-    private List<String> winners;
+    private String[] winners;
 
-    public Contest(String[] names,int attempt){
-        for (String name : names){
+    public Contest(String[] names, int attempt) {
+        for (String name : names) {
             participants.add(new Car(name));
         }
         this.attempt = attempt;
     }
 
-    void startContest(){
-        for(int i=0;i<attempt;i++){
+    public void startContest() {
+        for (int i = 0; i < attempt; i++) {
             this.attemptOnce();
         }
 
         this.winners = findWinners(this.participants);
-
-
     }
 
-    private void attemptOnce(){
-        for (Car participant:participants){
+    public void attemptOnce() {
+        for (Car participant : participants) {
             participant.moveCarRandomly();
         }
+        printResult();
     }
 
-    private List<String> findWinners(List<Car> participants){
+    private String[] findWinners(List<Car> participants) {
         int maxPosition = participants.stream()
                 .mapToInt(Car::getPosition)
                 .max()
@@ -45,14 +43,14 @@ public class Contest {
         return participants.stream()
                 .filter(participant -> participant.getPosition() == maxPosition)
                 .map(Car::getName)
-                .collect(Collectors.toList());
+                .toArray(String[]::new);
     }
 
-    public void setParticipants(ArrayList<Car> participants){
+    public void setParticipants(ArrayList<Car> participants) {
         this.participants = participants;
     }
 
-    public String[] getParticipantsName(){
+    public String[] getParticipantsName() {
         String[] names = new String[this.participants.size()];
 
         for (int i = 0; i < this.participants.size(); i++) {
@@ -62,9 +60,30 @@ public class Contest {
         return names;
     }
 
-    public List<String> getWinners(){
+    public List<Car> getParticipants() {
+        return this.participants;
+    }
+
+    public String[] getWinners() {
         return this.winners;
     }
 
+    private void printResult() {
+        for (Car participant : participants) {
+            String name = participant.getName();
+            System.out.print(name + " : ");
+            printStatus(participant);
+        }
+        System.out.println();
+    }
+
+    ;
+
+    private void printStatus(Car car) {
+        for (int i = 0; i < car.getPosition(); i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+    }
 
 }
