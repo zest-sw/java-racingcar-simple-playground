@@ -22,4 +22,8 @@ public class ContestIOManager {
         System.out.println();
     }
 
+    public void printStart() {
+        System.out.println("실행 결과");
+    }
+
 }

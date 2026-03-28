@@ -23,6 +23,7 @@ public class Contest {
     }
 
     public void startContest() {
+        iOManager.printStart();
         for (int i = 0; i < attempt; i++) {
             this.attemptOnce();
         }

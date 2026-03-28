@@ -10,8 +10,7 @@ public class Application {
         ApplicationIOManager IOmanager = new ApplicationIOManager();
 
         UserInput userInput = IOmanager.getUserInput();
-
-        System.out.println("실행 결과");
+        
         Contest contest = new Contest(userInput);
         contest.startContest();
 
