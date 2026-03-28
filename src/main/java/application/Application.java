@@ -1,6 +1,6 @@
 package application;
 
-import domain.contest.Contest;
+import domain.Contest;
 
 import java.util.Scanner;
 
@@ -12,11 +12,6 @@ public class Application {
         return names.split("\\s*,\\s*");
     }
 
-    private static void validateCarName(String name) {
-        if (name.length() > 5) {
-            throw new RuntimeException("자동차 이름은 5자 이하만 가능합니다.");
-        }
-    }
 
     public static void main(String[] args) {
 
@@ -27,9 +22,6 @@ public class Application {
         String[] participants = parseParticipant(names);
         if (participants.length == 0) {
             throw new IllegalArgumentException("자동차 이름이 잘못 입력되었습니다.(입력값이 없습니다.)");
-        }
-        for (String participant : participants) {
-            validateCarName(participant);
         }
 
         System.out.println("시도할 회수는 몇회인가요?");
