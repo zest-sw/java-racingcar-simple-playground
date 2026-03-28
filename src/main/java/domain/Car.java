@@ -1,4 +1,4 @@
-package domain.car;
+package domain;
 
 import java.util.Random;
 
@@ -9,7 +9,14 @@ public class Car {
     Random random = new Random();
 
     public Car(String CarName) {
+        validateCarName(CarName);
         this.name = CarName;
+    }
+
+    private static void validateCarName(String name) {
+        if (name.length() > 5) {
+            throw new RuntimeException("자동차 이름은 5자 이하만 가능합니다.");
+        }
     }
 
     public void moveCar(int inputValue) {

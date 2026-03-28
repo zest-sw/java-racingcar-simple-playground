@@ -1,6 +1,4 @@
-package domain.contest;
-
-import domain.car.Car;
+package domain;
 
 import java.util.ArrayList;
 import java.util.List;
