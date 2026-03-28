@@ -1,41 +1,22 @@
 package application;
 
 import domain.Contest;
-
-import java.util.Scanner;
+import utils.applicationIOMangager.ApplicationIOManager;
+import utils.applicationIOMangager.UserInput;
 
 public class Application {
 
-
-    private static String[] parseParticipant(String names) {
-
-        return names.split("\\s*,\\s*");
-    }
-
-
     public static void main(String[] args) {
+        ApplicationIOManager IOmanager = new ApplicationIOManager();
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).");
-        String names = scanner.nextLine();
-        String[] participants = parseParticipant(names);
-        if (participants.length == 0) {
-            throw new IllegalArgumentException("자동차 이름이 잘못 입력되었습니다.(입력값이 없습니다.)");
-        }
-
-        System.out.println("시도할 회수는 몇회인가요?");
-        int attempt = scanner.nextInt();
-        System.out.println();
-
+        UserInput userInput = IOmanager.getUserInput();
 
         System.out.println("실행 결과");
-        Contest contest = new Contest(participants, attempt);
+        Contest contest = new Contest(userInput);
         contest.startContest();
 
+
         String[] winners = contest.getWinners();
-        System.out.println(String.join(", ", winners) + "가 최종 우승했습니다.");
-
-
+        IOmanager.printResult(winners);
     }
 }

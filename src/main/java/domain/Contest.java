@@ -1,5 +1,8 @@
 package domain;
 
+import utils.ContestIOManager;
+import utils.applicationIOMangager.UserInput;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,12 +10,16 @@ public class Contest {
     private List<Car> participants = new ArrayList<>();
     private int attempt;
     private String[] winners;
+    private ContestIOManager iOManager = new ContestIOManager();
 
-    public Contest(String[] names, int attempt) {
+    public Contest(UserInput userInput) {
+
+        String[] names = userInput.getParticipants();
+
         for (String name : names) {
             participants.add(new Car(name));
         }
-        this.attempt = attempt;
+        this.attempt = userInput.getAttempt();
     }
 
     public void startContest() {
@@ -27,7 +34,7 @@ public class Contest {
         for (Car participant : participants) {
             participant.moveCarRandomly();
         }
-        printResult();
+        iOManager.printResult(participants);
     }
 
     private String[] findWinners(List<Car> participants) {
@@ -44,10 +51,6 @@ public class Contest {
                 .toArray(String[]::new);
     }
 
-    public void setParticipants(ArrayList<Car> participants) {
-        this.participants = participants;
-    }
-
     public String[] getParticipantsName() {
         String[] names = new String[this.participants.size()];
 
@@ -58,28 +61,9 @@ public class Contest {
         return names;
     }
 
-    public List<Car> getParticipants() {
-        return this.participants;
-    }
-
     public String[] getWinners() {
         return this.winners;
     }
 
-    private void printResult() {
-        for (Car participant : participants) {
-            String name = participant.getName();
-            System.out.print(name + " : ");
-            printStatus(participant);
-        }
-        System.out.println();
-    }
-
-    private void printStatus(Car car) {
-        for (int i = 0; i < car.getPosition(); i++) {
-            System.out.print("-");
-        }
-        System.out.println();
-    }
 
 }
