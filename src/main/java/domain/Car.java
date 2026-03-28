@@ -45,11 +45,7 @@ public class Car {
     public String getName() {
         return this.name;
     }
-
-    public void setName(String carName) {
-        this.name = carName;
-    }
-
+    
     public int getPosition() {
         return this.position;
     }
