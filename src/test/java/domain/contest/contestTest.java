@@ -3,6 +3,7 @@ package domain.contest;
 import domain.Contest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import utils.applicationIOMangager.UserInput;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -13,7 +14,8 @@ public class contestTest {
         //given
         String[] names = {"car1", "car2", "car3"};
         int attempt = 5;
-        Contest contest = new Contest(names, attempt);
+        UserInput userInput = new UserInput(names, attempt);
+        Contest contest = new Contest(userInput);
 
         //when
         String[] actual = contest.getParticipantsName();
@@ -29,7 +31,8 @@ public class contestTest {
         //given
         String[] names = {"car1", "car2", "car3"};
         int attempt = 5;
-        Contest contest = new Contest(names, attempt);
+        UserInput userInput = new UserInput(names, attempt);
+        Contest contest = new Contest(userInput);
 
         //when
         contest.startContest();
@@ -46,7 +49,8 @@ public class contestTest {
         //given
         String[] names = {"car1", "car2", "car3"};
         int attempt = 5;
-        Contest contest = new Contest(names, attempt);
+        UserInput userInput = new UserInput(names, attempt);
+        Contest contest = new Contest(userInput);
 
         //when
         contest.startContest();
