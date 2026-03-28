@@ -62,7 +62,7 @@ public class CarTest {
         String name = "car1";
         Car car = new Car(name);
 
-        //then
+        //when & then
         assertThatThrownBy(() -> {
             car.moveCar(-1);
         })
