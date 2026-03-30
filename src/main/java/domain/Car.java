@@ -1,12 +1,9 @@
 package domain;
 
-import java.util.Random;
-
 public class Car {
     private final String name;
     private int position;
 
-    Random random = new Random();
 
     public Car(String CarName) {
         validateCarName(CarName);
@@ -33,15 +30,6 @@ public class Car {
         }
     }
 
-    public void moveCarRandomly() {
-        int randomValue = getRandomValue();
-        moveCar(randomValue);
-    }
-
-    private int getRandomValue() {
-        return random.nextInt(9);
-    }
-
     public String getName() {
         return this.name;
     }
@@ -49,6 +37,4 @@ public class Car {
     public int getPosition() {
         return this.position;
     }
-
-
 }

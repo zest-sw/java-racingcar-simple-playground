@@ -5,12 +5,14 @@ import utils.applicationIOManager.UserInput;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Contest {
     private final List<Car> participants = new ArrayList<>();
     private final int attempt;
     private String[] winners;
     private final ContestIOManager iOManager = new ContestIOManager();
+    private final Random random = new Random();
 
     public Contest(UserInput userInput) {
 
@@ -20,6 +22,10 @@ public class Contest {
             participants.add(new Car(name));
         }
         this.attempt = userInput.getAttempt();
+    }
+
+    private int getRandomValue() {
+        return random.nextInt(10);
     }
 
     public void startContest() {
@@ -33,7 +39,7 @@ public class Contest {
 
     public void attemptOnce() {
         for (Car participant : participants) {
-            participant.moveCarRandomly();
+            participant.moveCar(getRandomValue());
         }
         iOManager.printResult(participants);
     }
@@ -43,8 +49,6 @@ public class Contest {
                 .mapToInt(Car::getPosition)
                 .max()
                 .orElse(0);
-
-        List<String> winners = new ArrayList<>();
 
         return participants.stream()
                 .filter(participant -> participant.getPosition() == maxPosition)
