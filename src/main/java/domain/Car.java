@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Car {
     private String name;
-    private int position = 0;
+    private int position;
 
     Random random = new Random();
 
