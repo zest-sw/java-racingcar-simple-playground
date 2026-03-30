@@ -7,10 +7,7 @@ import java.util.List;
 public class ContestIOManager {
 
     private void printStatus(Car car) {
-        for (int i = 0; i < car.getPosition(); i++) {
-            System.out.print("-");
-        }
-        System.out.println();
+    System.out.println("-".repeat(car.getPosition()));
     }
 
     public void printResult(List<Car> participants) {
