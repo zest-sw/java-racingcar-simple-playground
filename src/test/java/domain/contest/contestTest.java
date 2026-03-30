@@ -7,7 +7,7 @@ import utils.applicationIOMangager.UserInput;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class contestTest {
+public class ContestTest {
     @DisplayName("n대의 자동차가 참여할 수 있다.")
     @Test
     void n_대의_자동차가_참여() {
