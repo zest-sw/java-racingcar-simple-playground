@@ -3,7 +3,7 @@ package domain;
 import java.util.Random;
 
 public class Car {
-    private String name;
+    private final String name;
     private int position;
 
     Random random = new Random();
@@ -13,7 +13,7 @@ public class Car {
         this.name = CarName;
     }
 
-    private static void validateCarName(String name) {
+    private void validateCarName(String name) {
         if (name.length() > 5) {
             throw new RuntimeException("자동차 이름은 5자 이하만 가능합니다.");
         }
@@ -45,7 +45,7 @@ public class Car {
     public String getName() {
         return this.name;
     }
-    
+
     public int getPosition() {
         return this.position;
     }

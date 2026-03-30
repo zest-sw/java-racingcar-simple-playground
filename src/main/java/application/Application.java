@@ -1,16 +1,16 @@
 package application;
 
 import domain.Contest;
-import utils.applicationIOMangager.ApplicationIOManager;
-import utils.applicationIOMangager.UserInput;
+import utils.applicationIOManager.ApplicationIOManager;
+import utils.applicationIOManager.UserInput;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public void run() {
         ApplicationIOManager IOmanager = new ApplicationIOManager();
 
         UserInput userInput = IOmanager.getUserInput();
-        
+
         Contest contest = new Contest(userInput);
         contest.startContest();
 

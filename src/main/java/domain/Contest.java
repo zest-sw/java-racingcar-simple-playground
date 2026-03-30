@@ -1,7 +1,7 @@
 package domain;
 
 import utils.ContestIOManager;
-import utils.applicationIOMangager.UserInput;
+import utils.applicationIOManager.UserInput;
 
 import java.util.ArrayList;
 import java.util.List;

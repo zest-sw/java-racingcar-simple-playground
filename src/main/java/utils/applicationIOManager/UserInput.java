@@ -1,4 +1,4 @@
-package utils.applicationIOMangager;
+package utils.applicationIOManager;
 
 public class UserInput {
     private String[] participants;

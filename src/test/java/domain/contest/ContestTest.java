@@ -3,7 +3,7 @@ package domain.contest;
 import domain.Contest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import utils.applicationIOMangager.UserInput;
+import utils.applicationIOManager.UserInput;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
