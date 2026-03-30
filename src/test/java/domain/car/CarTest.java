@@ -64,9 +64,7 @@ public class CarTest {
         Car car = new Car(name);
 
         //when & then
-        assertThatThrownBy(() -> {
-            car.moveCar(-1);
-        })
+        assertThatThrownBy(() -> car.moveCar(-1))
                 .hasMessageContaining("자동차 이동 인자가 0보다 작습니다.");
     }
 
@@ -78,9 +76,7 @@ public class CarTest {
         Car car = new Car(name);
 
         //then
-        assertThatThrownBy(() -> {
-            car.moveCar(10);
-        })
+        assertThatThrownBy(() -> car.moveCar(10))
                 .hasMessageContaining("자동차 이동 인자가 9보다 큽니다.");
     }
 

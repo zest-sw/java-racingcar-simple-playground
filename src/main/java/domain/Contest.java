@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contest {
-    private List<Car> participants = new ArrayList<>();
-    private int attempt;
+    private final List<Car> participants = new ArrayList<>();
+    private final int attempt;
     private String[] winners;
-    private ContestIOManager iOManager = new ContestIOManager();
+    private final ContestIOManager iOManager = new ContestIOManager();
 
     public Contest(UserInput userInput) {
 
