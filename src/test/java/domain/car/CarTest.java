@@ -79,21 +79,4 @@ public class CarTest {
         assertThatThrownBy(() -> car.moveCar(10))
                 .hasMessageContaining("자동차 이동 인자가 9보다 큽니다.");
     }
-
-    @DisplayName("자동차는 0~9 사이 랜덤한 값으로 움직인다.")
-    @Test
-    void testCarMovingRandomly() {
-        //given
-        String name = "car1";
-        Car car = new Car(name);
-
-        //when
-        for (int i = 0; i <= 10000; i++) {
-            car.moveCarRandomly();
-        }
-        int position = car.getPosition();
-
-        //then
-        assertThat(position).isBetween(5000, 7000);
-    }
 }

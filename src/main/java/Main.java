@@ -1,8 +1,8 @@
-import application.Application;
+import controller.Controller;
 
 public class Main {
     public static void main(String[] args) {
-        Application application = new Application();
+        Controller application = new Controller();
         application.run();
     }
 }

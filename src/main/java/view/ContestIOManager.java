@@ -1,4 +1,4 @@
-package utils;
+package view;
 
 import domain.Car;
 
@@ -7,7 +7,7 @@ import java.util.List;
 public class ContestIOManager {
 
     private void printStatus(Car car) {
-    System.out.println("-".repeat(car.getPosition()));
+        System.out.println("-".repeat(car.getPosition()));
     }
 
     public void printResult(List<Car> participants) {

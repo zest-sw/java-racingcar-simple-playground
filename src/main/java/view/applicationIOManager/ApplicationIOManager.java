@@ -1,4 +1,4 @@
-package utils.applicationIOManager;
+package view.applicationIOManager;
 
 import java.util.Scanner;
 

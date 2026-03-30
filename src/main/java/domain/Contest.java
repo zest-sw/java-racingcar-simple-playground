@@ -1,7 +1,6 @@
 package domain;
 
-import utils.ContestIOManager;
-import utils.applicationIOManager.UserInput;
+import view.ContestIOManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +13,12 @@ public class Contest {
     private final ContestIOManager iOManager = new ContestIOManager();
     private final Random random = new Random();
 
-    public Contest(UserInput userInput) {
-
-        String[] names = userInput.getParticipants();
+    public Contest(String[] names, int attempt) {
 
         for (String name : names) {
             participants.add(new Car(name));
         }
-        this.attempt = userInput.getAttempt();
+        this.attempt = attempt;
     }
 
     private int getRandomValue() {

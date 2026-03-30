@@ -1,17 +1,17 @@
-package application;
+package controller;
 
 import domain.Contest;
-import utils.applicationIOManager.ApplicationIOManager;
-import utils.applicationIOManager.UserInput;
+import view.applicationIOManager.ApplicationIOManager;
+import view.applicationIOManager.UserInput;
 
-public class Application {
+public class Controller {
 
     public void run() {
         ApplicationIOManager IOmanager = new ApplicationIOManager();
 
         UserInput userInput = IOmanager.getUserInput();
 
-        Contest contest = new Contest(userInput);
+        Contest contest = new Contest(userInput.getParticipants(), userInput.getAttempt());
         contest.startContest();
 
 
